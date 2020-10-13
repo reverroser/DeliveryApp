@@ -10,6 +10,7 @@ import { Text } from "react-native";
 import Restaurants from "./screens/Restaurants";
 import Restaurant from "./screens/Restaurant";
 import MenuItem from "./screens/MenuItem";
+import OrderForm from "./screens/OrderForm";
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name="Restaurants" component={Restaurants} />
         <Stack.Screen name="Restaurant" component={Restaurant} />
         <Stack.Screen name="MenuItem" component={MenuItem} />
+        <Stack.Screen name="OrderForm" component={OrderForm} />
       </Stack.Navigator>
     </NavigationContainer>
   );

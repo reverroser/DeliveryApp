@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontFamily: "Roboto_400Regular"
   },
-  addToCart: {
+  orderCta: {
     marginTop: "auto",
     marginLeft: 16,
     marginRight: 16,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function MenuItem({ route }) {
+export default function MenuItem({ route, navigation }) {
   const { id } = route.params;
 
   const menuItem = menuItems.find(menuItem => menuItem.id === id);
@@ -65,7 +65,9 @@ export default function MenuItem({ route }) {
   const toggleMushyPeasSwitch = () =>
     setIsMushyPeasEnabled(previousState => !previousState);
 
-  const onClickAddToCart = () => {};
+  const onClickOrder = () => {
+    navigation.navigate("OrderForm");
+  };
 
   return (
     <View style={styles.container}>
@@ -88,8 +90,8 @@ export default function MenuItem({ route }) {
         />
         <Text style={styles.sideLabel}>Add mushy peas</Text>
       </View>
-      <View style={styles.addToCart}>
-        <Button title="Add to Cart" onPress={onClickAddToCart} />
+      <View style={styles.orderCta}>
+        <Button title="Order" onPress={onClickOrder} />
       </View>
     </View>
   );
