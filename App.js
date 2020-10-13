@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useFonts } from "expo-font";
 import { Roboto_400Regular } from "@expo-google-fonts/roboto";
-import { Lato_400Regular } from "@expo-google-fonts/lato";
+import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
 
 import Restaurants from "./screens/Restaurants";
 import Restaurant from "./screens/Restaurant";
@@ -14,7 +14,8 @@ const Stack = createStackNavigator();
 export default function App() {
   let [fontsLoaded] = useFonts({
     Roboto_400Regular,
-    Lato_400Regular
+    Lato_400Regular,
+    Lato_700Bold
   });
 
   // TODO: Add spinner

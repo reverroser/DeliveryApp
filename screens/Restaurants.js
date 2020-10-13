@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableHighlight,
   View
 } from "react-native";
 
@@ -43,11 +44,10 @@ const styles = StyleSheet.create({
     borderRadius: 8
   },
   name: {
-    fontWeight: "bold",
     fontSize: 16,
     marginBottom: 8,
     marginTop: 4,
-    fontFamily: "Lato_400Regular"
+    fontFamily: "Lato_700Bold"
   },
   description: {
     fontSize: 12,
@@ -94,23 +94,25 @@ export default function Restaurants({ navigation }) {
       <FlatList
         data={filteredRestaurants}
         renderItem={({ item }) => (
-          <View
-            style={styles.item}
-            onTouchStart={() => onClickRestaurant(item)}
+          <TouchableHighlight
+            onPress={() => onClickRestaurant(item)}
+            underlayColor="#f5f5f5"
           >
-            <Image
-              style={styles.image}
-              source={{
-                uri: item.image_url
-              }}
-            />
-            <View style={styles.itemContent}>
-              <Text style={styles.name}>{item.name}</Text>
-              <Text numberOfLines={3} style={styles.description}>
-                {item.description}
-              </Text>
+            <View style={styles.item}>
+              <Image
+                style={styles.image}
+                source={{
+                  uri: item.image_url
+                }}
+              />
+              <View style={styles.itemContent}>
+                <Text style={styles.name}>{item.name}</Text>
+                <Text numberOfLines={3} style={styles.description}>
+                  {item.description}
+                </Text>
+              </View>
             </View>
-          </View>
+          </TouchableHighlight>
         )}
         keyExtractor={(item, index) => index.toString()}
       />
