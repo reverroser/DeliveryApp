@@ -1,6 +1,6 @@
 # Delivery App
 
-This is a basic concept of a food delivery app.
+This is a basic concept of a food delivery app. [Expo link](https://expo.io/@reverroser/projects/DeliveryApp)
 
 ## Setup
 
