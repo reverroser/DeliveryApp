@@ -5,9 +5,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useFonts } from "expo-font";
 import { Roboto_400Regular } from "@expo-google-fonts/roboto";
 import { Lato_400Regular, Lato_700Bold } from "@expo-google-fonts/lato";
+import { Text } from "react-native";
 
 import Restaurants from "./screens/Restaurants";
 import Restaurant from "./screens/Restaurant";
+import MenuItem from "./screens/MenuItem";
 
 const Stack = createStackNavigator();
 
@@ -18,9 +20,8 @@ export default function App() {
     Lato_700Bold
   });
 
-  // TODO: Add spinner
   if (!fontsLoaded) {
-    return null;
+    return <Text>Loading...</Text>;
   }
 
   return (
@@ -28,6 +29,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Restaurants" component={Restaurants} />
         <Stack.Screen name="Restaurant" component={Restaurant} />
+        <Stack.Screen name="MenuItem" component={MenuItem} />
       </Stack.Navigator>
     </NavigationContainer>
   );

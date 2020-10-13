@@ -58,16 +58,21 @@ const styles = StyleSheet.create({
   },
   itemPrice: {
     fontSize: 14,
-    marginTop: 4
+    marginTop: 4,
+    fontFamily: "Roboto_400Regular"
   }
 });
 
-export default function Restaurant({ route }) {
+export default function Restaurant({ route, navigation }) {
   const { id } = route.params;
 
   const restaurant = restaurants.find(restaurant => restaurant.id === id);
 
-  const onClickMenuItem = () => {};
+  const onClickMenuItem = ({ id }) => {
+    navigation.navigate("MenuItem", {
+      id
+    });
+  };
 
   return (
     <View style={styles.container}>
